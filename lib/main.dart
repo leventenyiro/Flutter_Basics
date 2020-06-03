@@ -15,11 +15,21 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[900],
       ),
       body: Center(
-        /*child: Image(
-          //image: NetworkImage("http://www.trophien.com/img/about/mobile.png"),
-          //image: AssetImage("assets/cch.png"),
+        child: IconButton(
+          onPressed: () {
+            print("You clicked");
+          },
+          icon: Icon(Icons.alternate_email),
+          color: Colors.amber,
+        )
+        /*child: RaisedButton.icon(
+          onPressed: () {},
+          icon: Icon(
+            Icons.email
+          ),
+          label: Text("Email"),
+          color: Colors.amber,
         ),*/
-        child: Image.asset("assets/cch.png"),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
