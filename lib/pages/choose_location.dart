@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:flutter_basic/services/world_time.dart';
 
 class ChooseLocation extends StatefulWidget {
   @override
@@ -6,6 +7,12 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
+
+  List<WorldTime> locations = [
+    WorldTime(location: "Berlin", flag: "https://www.countryflags.io/de/flat/64.png", url: "Europe/Berlin"),
+    WorldTime(location: "Budapest", flag: "https://www.countryflags.io/hu/flat/64.png", url: "Europe/Budapest"),
+    WorldTime(location: "London", flag: "https://www.countryflags.io/gb/flat/64.png", url: "Europe/London")
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +24,25 @@ class _ChooseLocationState extends State<ChooseLocation> {
         title: Text("Choose a location"),
         centerTitle: true,
         elevation: 0,
+      ),
+      body: ListView.builder(
+        itemCount: locations.length,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
+            child: Card(
+              child: ListTile(
+                onTap: () {
+                  print(locations[index].location);
+                },
+                title: Text(locations[index].location),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(locations[index].flag),
+                ),
+              )
+            ),
+          );
+        },
       ),
     );
   }
