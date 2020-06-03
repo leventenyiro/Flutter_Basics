@@ -15,15 +15,11 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[900],
       ),
       body: Center(
-        child: Text("Hello",
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
-            color: Colors.grey[400],
-            fontFamily: "AbrilFatface"
-          )
-        )
+        /*child: Image(
+          //image: NetworkImage("http://www.trophien.com/img/about/mobile.png"),
+          //image: AssetImage("assets/cch.png"),
+        ),*/
+        child: Image.asset("assets/cch.png"),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
