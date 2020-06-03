@@ -15,7 +15,10 @@ class _HomeState extends State<Home> {
     data = ModalRoute.of(context).settings.arguments;
     print(data);
     
+    Color bgColor = data["isDayTime"] ? Colors.white : Colors.grey;
+    
     return Scaffold(
+      backgroundColor: bgColor,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
